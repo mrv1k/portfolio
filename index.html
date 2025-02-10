@@ -8,53 +8,110 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <style>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
 :root {
   --background: #181a1b;
-  --text: #d8d4cf;
-  --link: #3391ff;
+  --title: #c0bab2;
+  --text: #9f978b;
+  --link: #c0bab2;
+  --link-hover: #9f978b;
   /*--favicon-background: #fbf6e8;*/
   /*--favicon-arm: #fbf6e8;*/
   /*--favicon-wrench: #fbf6e8;*/
 }
 
-* {
+html {
   background: var(--darkreader-background-ffffff, #181a1b);
+  background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, avenir next,
     avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu,
     roboto, noto, arial, sans-serif;
+}
+
+h1, p {
+}
+
+h1 {
+  color: var(--title);
+  font-size: 1.125rem;
+  padding-bottom: 1.125rem;
+  line-height: 1.125;
+}
+
+p {
   color: var(--text);
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+  line-height: 1.5;
 }
 
 a, a:visited {
   color: var(--link);
 }
 
+a:hover {
+  color: var(--link-hover);
+}
+
 code {
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
-    </style>
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr min(60ch, calc(100% - 64px)) 1fr 1fr;
+  grid-column-gap: 32px;
+}
+.grid > * {
+  grid-column: 3;
+}
+.grid-full-bleed {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.wrapper {
+  margin-top: 200px;
+}
+</style>
   </head>
 
   <body>
-    <div>
-      <h1>victor voronov</h1>
+    <main class="grid">
+      <div class="wrapper">
+        <h1>victor voronov</h1>
 
-      <p>Senior software engineer based in Toronto, Canada.</p>
+        <p>Senior software engineer based in Toronto, Canada.</p>
 
-      <p>Currently I work at 
-        <a href="https://www.capgemini.com">Capgemini Engineering</a>,
-        building internal sites.
-      </p>
+        <p>Currently I work at 
+          <a href="https://www.capgemini.com">Capgemini Engineering</a>,
+          building internal tooling.
+        </p>
 
-      <p>Previously I worked at a small startup.</p>
+        <p>Previously I worked at tiny startups.</p>
 
-      <p>
-        Dev projects are up on
-        <a href="https://github.com/mrv1k">GitHub</a>.
-        The best way to reach me regarding work is
-        <a href="https://www.linkedin.com/in/mrv1k/">LinkedIn</a>.
-      </p>
+        <p>
+          Dev projects are up on
+          <a href="https://github.com/mrv1k">GitHub</a>.
+        </p>
+        <p>
+          The best way to reach me regarding work is on
+          <a href="https://www.linkedin.com/in/mrv1k/">LinkedIn</a>.
+        </p>
 
-    </div>
+      </div>
+    </main>
   </body>
 </html>
