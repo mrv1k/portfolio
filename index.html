@@ -45,9 +45,12 @@ h1, p {
 
 h1 {
   color: var(--title);
-  font-size: 1.125rem;
-  padding-bottom: 1.125rem;
-  line-height: 1.125;
+  font-size: 1.1rem;
+  padding-bottom: 0.55rem
+  line-height: 1.1;
+}
+.pb {
+  padding-bottom: 1.1rem;
 }
 
 p {
@@ -71,7 +74,7 @@ code {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr min(60ch, calc(100% - 64px)) 1fr 1fr;
+  grid-template-columns: 1fr 1fr min(69ch, calc(100% - 64px)) 1fr 1fr;
   grid-column-gap: 32px;
 }
 .grid > * {
@@ -84,6 +87,8 @@ code {
 
 .wrapper {
   margin-top: 200px;
+  max-width: 666px;
+  max-width: 69ch;
 }
 </style>
   </head>
@@ -93,14 +98,14 @@ code {
       <div class="wrapper">
         <h1>victor voronov</h1>
 
-        <p>Senior software engineer based in Toronto, Canada.</p>
+        <p class="pb">Senior software engineer based in Toronto, Canada.</p>
 
         <p>Currently I work at 
           <a href="https://www.capgemini.com">Capgemini Engineering</a>,
           building internal tooling.
         </p>
 
-        <p>Previously I worked at tiny startups.</p>
+        <p class="pb">Previously worked at tiny startups.</p>
 
         <p>
           Dev projects are up on
