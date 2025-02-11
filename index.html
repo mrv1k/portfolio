@@ -21,15 +21,43 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/*shared vars */
 :root {
   --background: #181a1b;
   --title: #c0bab2;
   --text: #9f978b;
   --link: #c0bab2;
   --link-hover: #9f978b;
-  /*--favicon-background: #fbf6e8;*/
-  /*--favicon-arm: #fbf6e8;*/
-  /*--favicon-wrench: #fbf6e8;*/
+}
+
+/*mobile vars*/
+:root {
+  --landing-margin-top: 6rem;
+  --text-size: 1.1rem;
+  --title-size: 1.2rem;
+}
+
+/*640px*/
+@media (width >= 40rem) {
+  :root {
+    --landing-margin-top: 8rem;
+  }
+}
+
+/*768px*/
+@media (width >= 48rem) {
+  :root {
+    --landing-margin-top: 9rem;
+    --text-size: 1rem;
+    --title-size: 1.1rem;
+  }
+}
+
+/*1024px*/
+@media (width >= 64rem) {
+  :root {
+    --landing-margin-top: 12rem;
+  }
 }
 
 html {
@@ -40,20 +68,17 @@ html {
     roboto, noto, arial, sans-serif;
 }
 
-h1, p {
-}
-
 h1 {
   color: var(--title);
-  font-size: 1.1rem;
-  padding-bottom: 0.55rem
-  line-height: 1.1;
+  font-size: var(--title-size);
+  line-height: 1.2;
 }
 .pb {
-  padding-bottom: 1.1rem;
+  margin-bottom: var(--title-size);
 }
 
 p {
+  font-size: var(--text-size);
   color: var(--text);
   overflow-wrap: break-word;
   text-wrap: pretty;
@@ -74,11 +99,11 @@ code {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr min(69ch, calc(100% - 64px)) 1fr 1fr;
-  grid-column-gap: 32px;
+  grid-template-columns: 1fr min(69ch, calc(100% - 6rem)) 1fr;
+  grid-column-gap: 3rem;
 }
 .grid > * {
-  grid-column: 3;
+  grid-column: 2;
 }
 .grid-full-bleed {
   width: 100%;
@@ -86,16 +111,9 @@ code {
 }
 
 .wrapper {
-  margin-top: 200px;
-  max-width: 666px;
-  max-width: 69ch;
+  margin-top: var(--landing-margin-top);
 }
-
-@media all and (min-width: 1024px) and (max-width: 1280px) { }
-@media all and (min-width: 768px) and (max-width: 1024px) { }
-@media all and (min-width: 480px) and (max-width: 768px) { }
-@media all and (max-width: 480px) { }
-</style>
+    </style>
   </head>
 
   <body>
@@ -107,7 +125,7 @@ code {
 
         <p>Currently I work at 
           <a href="https://www.capgemini.com">Capgemini Engineering</a>,
-          building internal tooling.
+          building web apps.
         </p>
 
         <p class="pb">Previously worked at tiny startups.</p>
